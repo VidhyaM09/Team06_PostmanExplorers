@@ -53,10 +53,15 @@
 			"value": "{ \"userLoginEmailId\" : \"sd@gmail.com\",\n  \"password\" : \"LHackathon@2024\"}",
 			"type": "secret",
 			"enabled": true
+		},
+		{
+			"key": "invalidLoginCredentials",
+			"value": "{ \"userLoginEmailId\" : \"sd@gmail.com\",\n  \"password\" : \"LHackathon@2024\"}",
+			"type": "default"
 		}
 	],
 	"name": "Globals",
 	"_postman_variable_scope": "globals",
-	"_postman_exported_at": "2024-11-14T03:17:02.482Z",
+	"_postman_exported_at": "2024-11-14T06:14:02.873Z",
 	"_postman_exported_using": "Postman/11.19.0-241023-0434"
 }

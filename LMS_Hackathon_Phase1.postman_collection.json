@@ -3503,11 +3503,11 @@
 						"type": "text/javascript",
 						"packages": {},
 						"exec": [
-							"const module = pm.iterationData.get('module').trim();\r",
+							"/*const module = pm.iterationData.get('module').trim();\r",
 							"\r",
 							"if (module.toLowerCase() == 'program') {\r",
 							"     pm.execution.skipRequest();       \r",
-							"}"
+							"}*/"
 						]
 					}
 				},
@@ -5584,6 +5584,33 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"batchId\": 8455,\r\n    \"classNo\": 2,\r\n    \"classDate\": \"2024-11-23\",\r\n    \"classTopic\": \"Math 101\",\r\n    \"classStaffId\": \"U49\",\r\n    \"classDescription\": \"Introduction to Math\",\r\n    \"classComments\": \"None\",\r\n    \"classNotes\": \"None\",\r\n    \"classRecordingPath\": \"/recordings/math101\",\r\n    \"batchName\": \"Java Batch 01\",\r\n    \"classScheduledDates\": [\r\n        \"2024-15-11T15:11:08.750Z\",\r\n        \"2024-16-11T15:11:08.750Z\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/updateClass/677",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"updateClass",
+								"677"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"event": [
@@ -5593,11 +5620,11 @@
 						"type": "text/javascript",
 						"packages": {},
 						"exec": [
-							"const module = pm.iterationData.get('module')?.trim();\r",
+							"/*const module = pm.iterationData.get('module')?.trim();\r",
 							"\r",
 							"if (module?.toLowerCase() == 'program') {\r",
 							"     pm.execution.skipRequest();       \r",
-							"}"
+							"}*/"
 						]
 					}
 				},
