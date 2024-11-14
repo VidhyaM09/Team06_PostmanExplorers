@@ -2865,14 +2865,15 @@
 						"type": "text/javascript",
 						"packages": {},
 						"exec": [
-							"const module = pm.iterationData.get('module').trim();\r",
+							"const module = pm.iterationData.get('module') ? pm.iterationData.get('module').trim() : null;\r",
 							"console.log(module);\r",
 							"\r",
-							"if (module.toLowerCase() == 'program') {\r",
-							"     pm.execution.skipRequest();       \r",
+							"if (module && (module.toLowerCase() === 'program' || module.toLowerCase() === 'class')) {\r",
+							"    pm.execution.skipRequest();\r",
 							"} else {\r",
-							"    console.log(\"Module value is either undefined or not 'program':\", module);\r",
+							"    console.log(\"Module value is either undefined or not 'program'/'class':\", module);\r",
 							"}\r",
+							"\r",
 							"\r",
 							""
 						]
@@ -5593,11 +5594,15 @@
 						"type": "text/javascript",
 						"packages": {},
 						"exec": [
-							"/*const module = pm.iterationData.get('module')?.trim();\r",
+							"const module = pm.iterationData.get('module') ? pm.iterationData.get('module').trim() : null;\r",
+							"console.log(module);\r",
 							"\r",
-							"if (module?.toLowerCase() == 'program') {\r",
-							"     pm.execution.skipRequest();       \r",
-							"}*/"
+							"if (module && (module.toLowerCase() === 'program' || module.toLowerCase() === 'batch')) {\r",
+							"    pm.execution.skipRequest();\r",
+							"} else {\r",
+							"    console.log(\"Module value is either undefined or not 'program'/'batch':\", module);\r",
+							"}\r",
+							""
 						]
 					}
 				},
